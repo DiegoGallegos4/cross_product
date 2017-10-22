@@ -58,10 +58,6 @@ Build production js files : ::
   npm run build-prod
 
 
-.. image:: ./merlin/static/merlin.png
-   :align: center
-
-
 Development
 -----------
 
