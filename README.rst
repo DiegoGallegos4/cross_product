@@ -20,6 +20,13 @@ Static files and templates are defined in its own directories:
 React files and automation tooling for development can be found on :
 * ui: containes __tests__ directory for jest tests and src directory for javascript files
 
+
+API
+---
+
+- Health endpoint: **/api/health**
+- Cross product endpoint: **/cross_product/api/compute**
+
 Docker
 ------
 
@@ -32,6 +39,8 @@ The docker-compose services are:
 * **Web**: Flask app serve by gunicorn http server.
 * **Proxy**: Nginx image that serves as a proxy to the web service and loads backend static files.
 * **Db**: Postgres database.
+
+Open browser and visit `<http://127.0.0.1:8003>`_
 
 NPM scripts
 -----------
