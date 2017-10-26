@@ -16,7 +16,7 @@ services:
     environment:
       - DATABASE_URI=postgresql://dev:dev@db:5432/cross_product
       - PORT=5001
-    command:  gunicorn --bind 0.0.0.0:5001 app:app
+    command:  gunicorn --bind 0.0.0.0:5001 wsgi:app
 
   proxy:
     image: nginx:1.13-alpine

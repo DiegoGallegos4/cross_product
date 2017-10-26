@@ -39,15 +39,12 @@ def api_compute():
         if errors:
             return jsonify({'message': errors}), 400
 
-        try:
-            result = compute_cross_product(vector1, vector2)
-            cp = CrossProduct(vector1=vector1, vector2=vector2, result=result)
-            db.session.add(cp)
-            db.session.commit()
+        result = compute_cross_product(vector1, vector2)
+        cp = CrossProduct(vector1=vector1, vector2=vector2, result=result)
+        db.session.add(cp)
+        db.session.commit()
 
-            return cross_product_schema.jsonify(cp)
-        except Exception as e:
-            return jsonify({'message': e})
+        return cross_product_schema.jsonify(cp)
 
 
 @cross_product.route('/')
