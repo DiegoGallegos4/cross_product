@@ -1,10 +1,12 @@
 from flask import Flask, jsonify
 from flask_marshmallow import Marshmallow
+from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.exceptions import HTTPException
 
 db = SQLAlchemy()
 ma = Marshmallow()
+migrate = Migrate()
 
 
 def create_app(config=None):
@@ -17,6 +19,7 @@ def create_app(config=None):
     # init dependencies
     db.init_app(app)
     ma.init_app(app)
+    migrate.init_app(app, db)
 
     # set error handlers
     set_error_handler(app)
